@@ -4,7 +4,7 @@
 ?>
 <main class="wrapper contenido">
   <img src="imagenes/uaem.jpg" class="maimg">
-  <h2>Despliegue de red inalámbrica del Campus Chamilpa</h2>
+  <h2>Despliegue de red inalámbrica del Campus Chamilpa JEsus</h2>
   <ul class="galeria">
   <?php
     Conexion::abrirConexion();
