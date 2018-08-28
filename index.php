@@ -12,7 +12,7 @@
     while ($row = mysqli_fetch_array($query)) {
       if ($row['estado'] != 'No disponible') { ?>
     <li>
-      <a class="boton2 box" href="vista-edif.php?edif=<?php echo $row['id_edificio']; ?>">
+      <a class="boton2 box" style="padding:1px" href="vista-edif.php?edif=<?php echo $row['id_edificio']; ?>">
         <?php echo $row['id_edificio']; ?>
         <img src="data: image/jpg; base64,<?php echo base64_encode($row['imagen']); ?>" width="80" height="50">
       </a>
