@@ -21,9 +21,12 @@ $edifrow = mysqli_fetch_array($edif);
   <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2>
   <img src="data: image/jpg; base64,<?php echo base64_encode($edifrow['imagen']); ?>" alt="Edicio" class="maimg">
   <div class="center">
-    <a href="vista-plano.php?edif=<?php echo $edificio; ?>" class="boton success">
+    <a class="boton success" href="vista-plano.php?edif=<?php echo $edificio; ?>">
       <i class="far fa-map"></i> Ubicación
-    </a><br><br>
+    </a>
+    <a class="boton success" href="generar-documento.php">
+      <i class="fas fa-print"></i> Imprimir
+    </a> <br><br>
   </div>
   <div style="overflow-x: auto; margin: auto">
     <table class="box radius">
