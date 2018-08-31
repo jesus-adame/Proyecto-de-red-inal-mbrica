@@ -8,7 +8,7 @@ if (!isset($edificio)) {
 
 require 'php/conexion.class.php';
 Conexion::abrirConexion();
-$mostrar="SELECT * FROM accesspoints WHERE EdificioNum = $edificio ORDER BY planta ASC LIMIT 200";
+$mostrar = "SELECT * FROM accesspoints WHERE EdificioNum = $edificio ORDER BY planta ASC LIMIT 200";
 $resultado = mysqli_query(Conexion::getConexion(), $mostrar);
 
 $query = "SELECT * FROM edificios WHERE id_edificio = $edificio LIMIT 200";
@@ -24,7 +24,7 @@ $edifrow = mysqli_fetch_array($edif);
     <a class="boton success" href="vista-plano.php?edif=<?php echo $edificio; ?>">
       <i class="far fa-map"></i> Ubicación
     </a>
-    <a class="boton success" href="generar-documento.php">
+    <a class="boton success" href="pdf/index.php?edif=<?php echo $edificio; ?>">
       <i class="fas fa-print"></i> Imprimir
     </a> <br><br>
   </div>
@@ -111,7 +111,7 @@ $edifrow = mysqli_fetch_array($edif);
         $mostrar = "SELECT * FROM switchs WHERE id_edificio = '$edificio'";
         $resultado = mysqli_query(Conexion::getConexion(), $mostrar);
         Conexion::cerrarConexion();
-        while($row = $resultado ->fetch_assoc()){
+        while($row = $resultado ->fetch_assoc()) {
         ?>
         <tr>
           <td>
