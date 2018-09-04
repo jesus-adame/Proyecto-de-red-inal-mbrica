@@ -77,7 +77,7 @@ $edifrow = mysqli_fetch_array($edif);
             <a class="boton default2 col-xs-1" style="margin-bottom: .2em" href="regis-editar-ap.php?id_ap=<?php echo $row['id_ap']; ?>">
               <i class="fas fa-edit"></i> Editar
             </a><br>
-            <a class="boton danger col-xs-1" href="php/func-eliminar-ap.php?button=<?php echo $row['id_ap']; ?>">
+            <a class="boton danger col-xs-1" href="php/func-eliminar-ap.php?id=<?php echo $row['id_ap']; ?>&i=<?php echo $row['inventario']; ?>">
               <i class="fas fa-times"></i> Eliminar
             </a>
           </td>
