@@ -17,7 +17,7 @@ $pdf->AliasNbPages(); // Permite obtener el número de páginas con el caracter 
 $pdf->AddPage();  // Se crea la primer página
 // Estilo del header de la tabla.
 $pdf->SetFont('Arial', 'B', 13);
-// Se setear el color de fondo y el tipo de letra que tomará el encabezado.
+// Se setear color de fondo y tipo de letra que tomará título de la tabla.
 $pdf->Write(10, 'Access Points Edificio - '.$edif);
 $pdf->Ln();
 /*------------------------------- Tabla 1 -------------------------------*/
@@ -53,8 +53,19 @@ while ($row = mysqli_fetch_array($execute)) {
   $pdf->Ln(14);
 }
 $pdf->Ln();
+$h = $pdf->GetPageHeight();
+$y = $pdf->GetY();
+//$pdf->Write(10, utf8_decode("Alto de página: $h posición actual: $y"));
+if ($y >= 145) {
+  $pdf->AddPage();
+}
 
 /*------------------------------ Tabla 2 ------------------------------*/
+// Estilo del header de la tabla SW.
+$pdf->SetFont('Arial', 'B', 13);
+// Se setear el color de fondo y el tipo de letra que tomará el encabezado.
+$pdf->Write(10, 'Switches Edificio - '.$edif);
+$pdf->Ln();
 $pdf->SetFont('Arial', 'B', 9);
 // Encabezado de la tabla de SW.
 $pdf->Cell(26, 6, 'ID SWITCH', 1, 0, 'C', 1);
