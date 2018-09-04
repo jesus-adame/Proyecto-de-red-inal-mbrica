@@ -1,6 +1,7 @@
 ﻿<?php
   include 'struct/header.php';
-  require 'php/conexion.class.php';
+  include 'sql/repositorio_edificios.php';
+  include 'php/conexion.class.php';
 ?>
 <main class="wrapper contenido">
   <img src="imagenes/uaem.jpg" class="maimg">
@@ -8,13 +9,15 @@
   <ul class="galeria">
   <?php
     Conexion::abrirConexion();
-    $query = mysqli_query(Conexion::getConexion(), "SELECT * FROM edificios");
+    $edificios = new Edificio();
+    $query = $edificios->mostrarTodos(Conexion::getConexion());
+    Conexion::cerrarConexion();
     while ($row = mysqli_fetch_array($query)) {
       if ($row['estado'] != 'No disponible') { ?>
     <li>
       <a class="boton2 box" style="padding:1px" href="vista-edif.php?edif=<?php echo $row['id_edificio']; ?>">
         <?php echo $row['id_edificio']; ?>
-        <img src="data: image/jpg; base64,<?php echo base64_encode($row['imagen']); ?>" width="80" height="50">
+        <img src="imagenes/edificios/<?php echo $row['img_edif']; ?>" width="80" height="50">
       </a>
     </li>
   <?php } } ?>

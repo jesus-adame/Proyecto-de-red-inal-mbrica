@@ -3,6 +3,8 @@ include_once 'conexion.class.php';
 include 'protect.php';
 
 $id_inventario = $_POST['id_inventario'];
+$destino = $_SERVER['DOCUMENT_ROOT'].'/wifi/imagenes/aps/';
+
 $powera = $_POST['power'];
 $lan1 = $_POST['lan1'];
 $lan2 = $_POST['lan2'];
@@ -12,7 +14,6 @@ $controladora = $_POST['controladora'];
 $ip_switch = $_POST['ip_switch'];
 $puerto = $_POST['puerto'];
 $informacion = $_POST['informacion'];
-$destino = $_SERVER['DOCUMENT_ROOT'].'/wifi/imagenes/aps/';
 
 if (empty($_FILES['imagen']['name'])) {
   $imagen_name = null;

@@ -6,7 +6,7 @@ class Conexion
   public static function abrirConexion() {
     if (!isset(self::$conexion)) {
       try {
-        include 'conexion.inc.php';
+        include 'config.php';
         self::$conexion = mysqli_connect($host, $user, $pass, $db);
       } catch (\Exception $e) {
         print 'Error: '.$e ->getMessage().'<br>';

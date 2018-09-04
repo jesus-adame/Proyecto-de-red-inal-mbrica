@@ -19,7 +19,7 @@ $edifrow = mysqli_fetch_array($edif);
 ?>
 <main class="wrapper contenido">
   <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2>
-  <img src="data: image/jpg; base64,<?php echo base64_encode($edifrow['imagen']); ?>" alt="Edicio" class="maimg">
+  <img src="imagenes/edificios/<?php echo $edifrow['img_edif']; ?>" alt="<?php echo $edifrow['nombre']; ?>" class="maimg">
   <div class="center">
     <a class="boton success" href="vista-plano.php?edif=<?php echo $edificio; ?>">
       <i class="far fa-map"></i> Ubicación

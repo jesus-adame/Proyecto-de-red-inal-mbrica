@@ -3,9 +3,19 @@
   include 'protect.php';
 
   $id_edificio = $_POST['id_edificio'];
+  $destino = $_SERVER['DOCUMENT_ROOT'].'/wifi/imagenes/edificios/';
+
   $nombre = $_POST['nombre'];
-  $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-  $query = "INSERT INTO edificios (id_edificio, nombre, imagen) VALUES ($id_edificio, '$nombre', '$imagen')";
+
+  if (empty($_FILES['imagen']['name'])) {
+    $imagen_name = null;
+  } else {
+    $imagen_name = $_FILES['imagen']['name'];
+    $imagen_size = $_FILES['imagen']['size'];
+    $imagen_type = $_FILES['imagen']['type'];
+  }
+
+  $query = "INSERT INTO edificios (id_edificio, nombre, img_edif, imagen) VALUES ($id_edificio, '$nombre', '$imagen_name', 'imagen')";
 
   Conexion::abrirConexion();
   /* Verificar que el edificio no esté agregado. */
@@ -27,6 +37,7 @@
     window.history.go(-1);
     </script>';
   } else {
+    move_uploaded_file($_FILES['imagen']['tmp_name'], $destino.$imagen_name);
     echo '<script>
     window.history.go(-2);
     alert("Edificio agregado exitosamente");

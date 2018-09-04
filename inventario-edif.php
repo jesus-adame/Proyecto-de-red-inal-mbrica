@@ -31,7 +31,7 @@ include 'php/conexion.class.php';
           </td>
           <td><?php echo $row['nombre']; ?></td>
           <td style="position:relative">
-            <img src="data:image/jpg; base64,<?php echo base64_encode($row['imagen']); ?>" alt="Edificio" style="max-width:130px; max-height:90px; margin:auto">
+            <img src="imagenes/edificios/<?php echo $row['img_edif']; ?>" alt="<?php echo $row['nombre']; ?>" style="max-width:130px; max-height:90px; margin:auto">
             <p class="cartel"><?php echo $row['estado']; ?></p>
           </td>
           <?php
