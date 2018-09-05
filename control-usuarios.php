@@ -1,6 +1,9 @@
 <?php
 include 'struct/header.php';
 include 'php/conexion.class.php';
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 1) {
+  header('location: inicio.php'); // Evita el acceso a usuarios no identificados
+}
 Conexion::abrirConexion();
 ?>
 <main class="contenido wrapper">

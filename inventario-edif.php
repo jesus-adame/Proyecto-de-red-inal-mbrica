@@ -11,7 +11,7 @@ include 'php/conexion.class.php';
           <th style="width: 10%">Número</th>
           <th style="width: 50%">nombre</th>
           <th style="max-width: 100px">Imagen</th>
-          <?php if ($_SESSION['tipo'] == 1) { ?>
+          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3) { ?>
           <th class='id'>
             <a href="reg-agregar-edif.php" class="boton default"><i class="fas fa-plus-circle"></i> Agregar</a>
           </td>
@@ -35,7 +35,7 @@ include 'php/conexion.class.php';
             <p class="cartel"><?php echo $row['estado']; ?></p>
           </td>
           <?php
-          if ($_SESSION['tipo'] == 1) { ?>
+          if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3) { ?>
           <td>
             <a class="center boton default2 col-xs-1" style="margin-bottom: .5em;" href="reg-editar-edif.php?id_edificio=<?php echo $row['id_edificio']; ?>">
               <i class="fas fa-edit"></i> Editar

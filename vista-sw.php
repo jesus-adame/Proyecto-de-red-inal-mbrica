@@ -18,8 +18,8 @@ $srow = mysqli_fetch_array($sresult);
   <div class="row">
     <div class=" div-ap img-ap col-xs-1 col-md-2 box"><br>
       <h3>Localización</h3>
-      <img style="height: 20em" class="wrapper"
-      src="imagenes/switchs/<?php echo $srow['imagen']; ?>" alt="Imagen"><br>
+      <img style="max-height: 20em; width: 100%" class="wrapper"
+      src="imagenes/switchs/<?php echo $srow['imagen']; ?>" alt="<?php echo $row['sysname']; ?>"><br>
       <div style="overflow-x: auto; margin: auto;">
         <table class="radius">
           <thead>
@@ -34,7 +34,7 @@ $srow = mysqli_fetch_array($sresult);
           <tbody>
             <tr>
               <td><?php echo $row['sysname']; ?></td>
-              <td><?php echo $row['sysname']; ?></td>
+              <td><?php echo $row['modelo']; ?></td>
               <td><?php echo $row['sysname']; ?></td>
               <td><?php echo $row['sysname']; ?></td>
               <td><?php echo $row['sysname']; ?></td>
@@ -56,11 +56,11 @@ $srow = mysqli_fetch_array($sresult);
       <p><b>Mac Address:</b> <?php echo $row['mac']; ?></p><br>
       <?php if ($srow['id_switch'] <= 0) { ?>
       <a class='boton2' href='reg-prop-agregar-sw.php?id_switch=<?php echo $row['id_switch']; ?>'>
-        <i class="fas fa-arrow-up"></i> Registrar imagen
+        <i class="fas fa-arrow-up"></i> Registrar datos
       </a><br>
       <?php } else { ?>
       <a class="boton2" href="reg-prop-editar-sw.php?id_switch=<?php echo $row['id_switch']; ?>">
-        <i class="fas fa-edit"></i> Actualizar imagen
+        <i class="fas fa-edit"></i> Actualizar datos
       </a>
       <?php } ?>
       <p class="txt">Última actualización</p>
