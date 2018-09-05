@@ -3,7 +3,7 @@
   include 'protect.php';
 
   $id_ap = $_POST['actualizar'];
-  $inventario = $_POST['inventario'];
+  $inventario = strtoupper($_POST['inventario']);
   $mac1 = $_POST["mac1"];
   $mac2 = $_POST["mac2"];
   $ip = $_POST["ip"];
@@ -17,9 +17,9 @@
   Canal2 = '$canalr2', Planta = '$planta', EdificioNum = '$edificio'
   WHERE id_ap = '$id_ap'";
   Conexion::abrirConexion();
-  $resultado = mysqli_query(Conexion::getConexion(),$query);
+  $resultado = mysqli_query(Conexion::getConexion(), $query);
   Conexion::cerrarConexion();
-  
+
   if ($resultado) {
     // te muestra un mensaje y regresa
     echo '<script>
@@ -27,7 +27,7 @@
     alert("Editado exitosamente");
     </script>';
 
-  } else{
+  } else {
     echo '<script>
     alert("Error al editar el AP");
     window.history.go(-1);

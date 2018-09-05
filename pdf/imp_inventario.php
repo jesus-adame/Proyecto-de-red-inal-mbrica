@@ -1,5 +1,5 @@
 <?php
-require 'plantilla.php';
+require 'plantilla_inventario_sw_ap.php';
 include '../php/conexion.class.php';
 // Recibo el edificio que deceo examinar.
 $edif = $_GET['edif'];

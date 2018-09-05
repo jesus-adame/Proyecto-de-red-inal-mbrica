@@ -3,7 +3,7 @@
   include 'protect.php';
   /* Resibir datos y almacenarlos */
   $edificio = $_POST["edificio"];
-  $inventario = $_POST["inventario"];
+  $inventario = strtoupper($_POST["inventario"]);
   $mac1 = $_POST["mac1"];
   $mac2 = $_POST["mac2"];
   $ip = $_POST["ip"];

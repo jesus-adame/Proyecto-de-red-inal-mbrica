@@ -24,7 +24,7 @@ $edifrow = mysqli_fetch_array($edif);
     <a class="boton success" href="vista-plano.php?edif=<?php echo $edificio; ?>">
       <i class="far fa-map"></i> Ubicación
     </a>
-    <a class="boton success" href="pdf/index.php?edif=<?php echo $edificio; ?>">
+    <a class="boton success" href="pdf/imp_inventario.php?edif=<?php echo $edificio; ?>">
       <i class="fas fa-print"></i> Imprimir
     </a> <br><br>
   </div>
