@@ -16,10 +16,15 @@ $srow = mysqli_fetch_array($sresult);
 ?>
 <main class="wrapper contenido">
   <div class="row">
-    <div class=" div-ap img-ap col-xs-1 col-md-2 box"><br>
-      <h3>Localización</h3>
+    <div class=" div-ap col-xs-1 col-md-2 box">
+      <h3>Localización</h3><br>
       <img style="max-height: 20em; width: 100%" class="wrapper"
-      src="imagenes/switchs/<?php echo $srow['imagen']; ?>" alt="<?php echo $row['sysname']; ?>"><br>
+      src="imagenes/switchs/<?php
+      if ($srow['imagen'] != '') {
+        echo $srow['imagen'];
+      } else {
+        echo 'default-sw.png';
+      } ?>" alt="<?php echo $row['sysname']; ?>"><br>
       <div style="overflow-x: auto; margin: auto;">
         <table class="radius">
           <thead>
@@ -33,27 +38,27 @@ $srow = mysqli_fetch_array($sresult);
           </thead>
           <tbody>
             <tr>
-              <td><?php echo $row['sysname']; ?></td>
-              <td><?php echo $row['modelo']; ?></td>
-              <td><?php echo $row['sysname']; ?></td>
-              <td><?php echo $row['sysname']; ?></td>
-              <td><?php echo $row['sysname']; ?></td>
+              <td><?php echo $srow['sumistack']; ?></td>
+              <td><?php echo $srow['xgm3']; ?></td>
+              <td><?php echo $srow['xgm3sb']; ?></td>
+              <td><?php echo $srow['sfp']; ?></td>
+              <td><?php echo $srow['vim']; ?></td>
             </tr>
           </tbody>
         </table>
       </div>
       <br><br>
     </div>
-    <div class="div-ap propiedades col-xs-1 col-md-2 box">
+    <div class="div-ap div-padding col-xs-1 col-md-2 box">
       <h3 class="wrapper">Edificio <?php echo $row['id_edificio']; ?></h3><br>
-      <p><b>Inventario:</b> <?php echo $row['id_switch']; ?></p><br>
-      <p><b>Sysname:</b> <?php echo $row['sysname']; ?></p><br>
-      <p><b>Modelo:</b> <?php echo $row['modelo']; ?></p><br>
-      <p><b>Serie:</b> <?php echo $row['serie']; ?></p><br>
-      <p><b>Firmware:</b> <?php echo $row['id_switch']; ?></p><br>
-      <p><b>Partición:</b> <?php echo $row['particion']; ?></p><br>
-      <p><b>IP Switch:</b> <?php echo $row['ip_switch']; ?></p><br>
-      <p><b>Mac Address:</b> <?php echo $row['mac']; ?></p><br>
+      <p>Inventario:<b> <?php echo $row['id_switch']; ?></b></p><br>
+      <p>Sysname:<b> <?php echo $row['sysname']; ?></b></p><br>
+      <p>Modelo:<b> <?php echo $row['modelo']; ?></b></p><br>
+      <p>Serie:<b> <?php echo $row['serie']; ?></b></p><br>
+      <p>Firmware:<b> <?php echo $row['firmware']; ?></b></p><br>
+      <p>Partición:<b> <?php echo $row['particion']; ?></b></p><br>
+      <p>IP Switch:<b> <?php echo $row['ip_switch']; ?></b></p><br>
+      <p>Mac Address:<b> <?php echo $row['mac']; ?></b></p><br>
       <?php if ($srow['id_switch'] <= 0) { ?>
       <a class='boton2' href='reg-prop-agregar-sw.php?id_switch=<?php echo $row['id_switch']; ?>'>
         <i class="fas fa-arrow-up"></i> Registrar datos

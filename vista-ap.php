@@ -20,11 +20,16 @@
 ?>
 <main class="wrapper contenido">
   <div class="row">
-    <div class="img-ap col-xs-1 col-sm-2 box div-ap">
-      <h3>Localización</h3>
-      <img class="thumb" src="imagenes/aps/<?php echo $row['imagen']; ?>" alt="No se puede mostrar la imagen">
+    <div class="col-xs-1 col-sm-2 box div-ap">
+      <h3 class="wrapper">Localización</h3><br>
+      <img class="thumb" src="imagenes/aps/<?php
+      if ($row['imagen'] == '') {
+        echo 'default-ap.png';
+      } else {
+        echo $row['imagen'];
+      } ?>" alt="No se puede mostrar la imagen">
     </div>
-    <div class="propiedades col-xs-1 col-sm-2 box div-ap">
+    <div class="col-xs-1 col-sm-2 box div-ap div-padding">
       <h3 class="wrapper">Edificio <?php echo $edificio; ?></h3><br>
       <p class="txt wrapper">Inventario</p>
       <p class="wrapper"><?php echo $inventario; ?></p>
@@ -93,7 +98,7 @@
       <p class="txt">Última edición</p>
       <p><?php echo $row['actualizacion']; ?></p><br>
       <p class="txt">Información</p>
-      <p><?php echo $row['informacion']; ?></p><br>
+      <p style="overflow:hidden"><?php echo $row['informacion']; ?></p><br><br>
       <?php
       if ($_SESSION['tipo'] == 1) {
         if ($row['id_inventario'] > 0) { ?>

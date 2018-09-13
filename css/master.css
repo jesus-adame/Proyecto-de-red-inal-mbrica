@@ -24,6 +24,12 @@
 .show {
 	visibility: visible;
 }
+.separaVertical {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	padding-bottom: 0;
+}
 
 /* Global */
 
@@ -143,14 +149,13 @@ input, textarea, select {
 	padding:.3em .4em;
 	letter-spacing: 0.05em;
 }
+
 input:focus, textarea:focus, select:hover {
 	box-shadow: 0px 0px 5px #5AC3E2;
 	border: solid 1px #55bad6;
 }
+
 footer {		/* Pie de páginas */
-	display: block;
-	position: relative;
-	bottom: -10px;
 	margin-top: 2em;
 	padding: 2em 2em;
 	color: #fff;
@@ -239,10 +244,14 @@ footer .boton:hover {
 /* Vista AP */
 
 .div-ap {
-	height: 90%;
-	overflow: hidden;
-	min-height: 700px;
-	max-height: 800px;
+	text-align: justify;
+	padding-top: 15px;
+	border-radius: 4px;
+	display: flex;
+	position: relative;
+	overflow-x: hidden;
+	min-height: 590px;
+	max-height: 100%;
 	color: #000;
 	background: #f2f5f6;
 		background: -moz-linear-gradient(top, #f2f5f6 0%, #c8d7dc 100%);
@@ -251,14 +260,9 @@ footer .boton:hover {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6',
 	endColorstr='#c8d7dc',GradientType=0 );
 }
-.img-ap {
-	border-radius: 4px;
-	padding-top: 12px;
-}
-.propiedades {
-	text-align: justify;
-	padding: 10px 20px;
-	border-radius: 4px;
+.div-padding {
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .txt {
 	font-size: 18px;
@@ -439,10 +443,10 @@ footer .boton:hover {
 	max-width: 6em;
 }
 .thumb {
-	position: relative;
+	display: block;
+	position: absolute;
 	max-width: 100%;
-	min-height: 400px;
-	max-height: 580px;
+	max-height: 700px;
 }
 .borde {
 	border: solid 1px #bcbcbc;
@@ -497,7 +501,6 @@ footer .boton:hover {
 		overflow: scroll;
 	}
 	.main {
-		display: block;
 		/*float:left;*/
 		margin-bottom: 10px;
 	}

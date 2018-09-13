@@ -10,7 +10,6 @@ $querySW = "SELECT * FROM switchs WHERE id_edificio = $edif";
 Conexion::abrirConexion();
 $execute = mysqli_query(Conexion::getConexion(), $query);
 $executeSW = mysqli_query(Conexion::getConexion(), $querySW);
-Conexion::cerrarConexion();
 
 $pdf = new PDF('L','mm','A4'); // Se crea el objeto pdf con la clase PDF.
 $pdf->AliasNbPages(); // Permite obtener el número de páginas con el caracter {nb}
@@ -68,26 +67,66 @@ $pdf->Write(10, 'Switches Edificio - '.$edif);
 $pdf->Ln();
 $pdf->SetFont('Arial', 'B', 9);
 // Encabezado de la tabla de SW.
-$pdf->Cell(26, 6, 'ID SWITCH', 1, 0, 'C', 1);
-$pdf->Cell(26, 6, 'SYSNAME', 1, 0, 'C', 1);
-$pdf->Cell(50, 6, 'MODELO 1', 1, 0, 'C', 1);
-$pdf->Cell(50, 6, 'SERIE', 1, 0, 'C', 1);
-$pdf->Cell(30, 6, 'FIRMWARE', 1, 0, 'C', 1);
-$pdf->Cell(30, 6, utf8_decode('PARTICIÓN'), 1, 0, 'C', 1);
-$pdf->Cell(30, 6, 'IP SWITCH', 1, 0, 'C', 1);
-$pdf->Cell(38, 6, 'MAC ADDRESS', 1, 0, 'C', 1);
+$pdf->Cell(32, 6, 'ID SWITCH', 1, 0, 'C', 1);
+$pdf->Cell(32, 6, 'SYSNAME', 1, 0, 'C', 1);
+$pdf->Cell(40, 6, 'MODELO 1', 1, 0, 'C', 1);
+$pdf->Cell(40, 6, 'SERIE', 1, 0, 'C', 1);
+$pdf->Cell(32, 6, 'FIRMWARE', 1, 0, 'C', 1);
+$pdf->Cell(32, 6, utf8_decode('PARTICIÓN'), 1, 0, 'C', 1);
+$pdf->Cell(32, 6, 'IP SWITCH', 1, 0, 'C', 1);
+$pdf->Cell(40, 6, 'MAC ADDRESS', 1, 0, 'C', 1);
 $pdf->Ln();
 // Cuerpo de la tabla de SW con registros de la DB.
 $pdf->SetFont('Arial', '', 9);
 while ($rowSW = mysqli_fetch_array($executeSW)) {
-  $pdf->Cell(26, 14, $rowSW['id_switch'], 1, 0, 'C');
-  $pdf->Cell(26, 14, $rowSW['sysname'], 1, 0, 'C');
-  $pdf->Cell(50, 14, $rowSW['modelo'], 1, 0, 'C');
-  $pdf->Cell(50, 14, $rowSW['serie'], 1, 0, 'C');
-  $pdf->Cell(30, 14, $rowSW['firmware'], 1, 0, 'C');
-  $pdf->Cell(30, 14, $rowSW['particion'], 1, 0, 'C');
-  $pdf->Cell(30, 14, $rowSW['ip_switch'], 1, 0, 'C');
-    $pdf->Cell(38, 14, $rowSW['mac'], 1, 0, 'C');
+  $pdf->Cell(32, 14, $rowSW['id_switch'], 1, 0, 'C');
+  $pdf->Cell(32, 14, $rowSW['sysname'], 1, 0, 'C');
+  $pdf->Cell(40, 14, $rowSW['modelo'], 1, 0, 'C');
+  $pdf->Cell(40, 14, $rowSW['serie'], 1, 0, 'C');
+  $pdf->Cell(32, 14, $rowSW['firmware'], 1, 0, 'C');
+  $pdf->Cell(32, 14, $rowSW['particion'], 1, 0, 'C');
+  $pdf->Cell(32, 14, $rowSW['ip_switch'], 1, 0, 'C');
+  $pdf->Cell(40, 14, $rowSW['mac'], 1, 0, 'C');
+  $pdf->Ln(14);
+}
+$pdf->Ln();
+$h = $pdf->GetPageHeight();
+$y = $pdf->GetY();
+//$pdf->Write(10, utf8_decode("Alto de página: $h posición actual: $y"));
+if ($y >= 145) {
+  $pdf->AddPage();
+}
+
+/*------------------------------ Tabla 3 ------------------------------*/
+// Estilo del header de la tabla Accesorios.
+$pdf->SetFont('Arial', 'B', 13);
+// Se setear el color de fondo y el tipo de letra que tomará el encabezado.
+$pdf->Write(10, 'Accesorios Switches Edificio - '.$edif);
+$pdf->Ln();
+$pdf->SetFont('Arial', 'B', 9);
+// Encabezado de la tabla de SW.
+$pdf->Cell(46, 6, 'ID SWITCH', 1, 0, 'C', 1);
+$pdf->Cell(46, 6, 'SUMISTACK', 1, 0, 'C', 1);
+$pdf->Cell(46, 6, 'XGM3-2sf', 1, 0, 'C', 1);
+$pdf->Cell(46, 6, 'XGM3SB-4sf', 1, 0, 'C', 1);
+$pdf->Cell(46, 6, 'SFP+_LR', 1, 0, 'C', 1);
+$pdf->Cell(46, 6, utf8_decode('VIM4-40G4x2'), 1, 0, 'C', 1);
+$pdf->Ln();
+// Cuerpo de la tabla de SW con registros de la DB.
+$pdf->SetFont('Arial', '', 9);
+
+$querySW = "SELECT * FROM switchs INNER JOIN prop_switchs
+ON switchs.id_switch = prop_switchs.id_switch WHERE id_edificio = $edif";
+$executeSW = mysqli_query(Conexion::getConexion(), $querySW);
+Conexion::cerrarConexion();
+
+while ($rowA = mysqli_fetch_array($executeSW)) {
+  $pdf->Cell(46, 14, $rowA['id_switch'], 1, 0, 'C');
+  $pdf->Cell(46, 14, $rowA['sumistack'], 1, 0, 'C');
+  $pdf->Cell(46, 14, $rowA['xgm3'], 1, 0, 'C');
+  $pdf->Cell(46, 14, $rowA['xgm3sb'], 1, 0, 'C');
+  $pdf->Cell(46, 14, $rowA['sfp'], 1, 0, 'C');
+  $pdf->Cell(46, 14, $rowA['vim'], 1, 0, 'C');
   $pdf->Ln(14);
 }
 

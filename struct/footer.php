@@ -4,7 +4,7 @@
     <?php
     if (isset($_SESSION['usuario'])) { ?>
     <ul><?php
-      if ($_SESSION['tipo'] == 1) { ?>
+      if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2) { ?>
       <li>
         <a class="boton" href="control-usuarios.php">
           <i class="fas fa-users"></i> Usuarios

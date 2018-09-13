@@ -1,24 +1,22 @@
 <?php
 include 'conexion.class.php';
+include 'rep_usuario.php';
 session_start();
 Conexion::abrirConexion();
 
-$usuario = $_POST['usuario'];
+$usu = $_POST['usuario'];
 $pass = $_POST['pass'];
 
-$query = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND pass = '$pass'";
-$execute = mysqli_query(Conexion::getConexion(), $query);
-$row = mysqli_fetch_array($execute);
+$usuario = new Usuario($usu);
+$execute = $usuario->iniciarSesion(Conexion::getConexion(), $pass);
 
-if ($row) {
-  $_SESSION['usuario'] = $row['usuario'];
-  $_SESSION['tipo'] = $row['tipo'];
+if ($execute) {
   header('location: ../index.php');
   echo 'iniciando session...';
 } else {
   echo "<script>
   alert('Usuario o contraseña no válidas');
-  window.history.go(-1);
+  history.go(-1);
   </script>";
 }
 

@@ -11,10 +11,11 @@
   $canalr2 = $_POST["canalr2"];
   $planta = $_POST["planta"];
   $edificio = $_POST["edificio"];
+  $lugar = $_POST["lugar"];
 
   $query = "UPDATE accesspoints
   SET inventario = '$inventario', IP = '$ip', Mac1 = '$mac1', Mac2 = '$mac2', Canal1 = '$canalr1',
-  Canal2 = '$canalr2', Planta = '$planta', EdificioNum = '$edificio'
+  Canal2 = '$canalr2', Planta = '$planta', EdificioNum = '$edificio', lugar = '$lugar'
   WHERE id_ap = '$id_ap'";
   Conexion::abrirConexion();
   $resultado = mysqli_query(Conexion::getConexion(), $query);

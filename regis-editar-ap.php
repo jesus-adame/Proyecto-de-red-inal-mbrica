@@ -10,7 +10,7 @@
   $row = $resultado -> fetch_assoc();
 ?>
     <section class="wrapper contenido">
-      <form class="formulario box" action="php/func-editar-ap.php" method="post">
+      <form class="formulario box" action="php/func-editar-ap.php" method="post" enctype="multipart/form-data">
         <h3>Actualizar AP <?php echo $row['inventario']; ?></h3>
         <label class="col-xs-2" for="[inventario]">
           <p>Inventario</p>
@@ -55,6 +55,10 @@
           <p>Edificio</p>
           <input class="col-xs-1" type="text" placeholder="Numero de edificio" name="edificio" value="<?php echo $row['EdificioNum']; ?>" required>
         </label><br>
+        <label class="col-xs-1" for="lugar">
+          <p>Ubicación</p>
+          <textarea class="col-xs-1" name="lugar" rows="4" cols="20"><?php echo $row['lugar']; ?></textarea>
+        </label><br><br>
         <div class="center">
           <button type="submit" name="actualizar" value="<?php echo $id_ap; ?>" class="boton default2">
             <i class="fas fa-share-square"></i> Actualizar

@@ -39,7 +39,7 @@ $edifrow = mysqli_fetch_array($edif);
           <th colspan="2">Canales</th>
           <th rowspan="2" >Planta</th>
           <th rowspan="2" style="width: 14%">Ubicación</th>
-        <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3) { ?>
+        <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2) { ?>
           <th rowspan="2" class="id">
             <a class="boton default2" href="regis-agregar-ap.php?edif=<?php echo $edificio; ?>">
               <i class="fas fa-plus-circle"></i> Agregar
@@ -72,7 +72,7 @@ $edifrow = mysqli_fetch_array($edif);
           <td><?php echo $row['Canal2']; ?></td>
           <td><?php echo $row['Planta']; ?></td>
           <td><?php echo $row['lugar'] ?></td>
-          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3){ ?>
+          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2){ ?>
           <td style="width: 10%; min-width: 5px; max-width: 20px">
             <a class="boton default2 col-xs-1" style="margin-bottom: .2em" href="regis-editar-ap.php?id_ap=<?php echo $row['id_ap']; ?>">
               <i class="fas fa-edit"></i> Editar
@@ -92,11 +92,12 @@ $edifrow = mysqli_fetch_array($edif);
       <thead>
         <tr>
           <th class="id">Inventario</th>
+          <th>Sysname</th>
           <th class=''>Modelo</th>
           <th class=''>Serie</th>
           <th class='id'>IP</th>
           <th class='id'>Edificio</th>
-          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3) { ?>
+          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2) { ?>
           <th class="id">
             <a class="boton default2" href="reg-agregar-sw.php?edif=<?php echo $edificio; ?>">
               <i class="fas fa-plus-circle"></i> Agregar
@@ -117,11 +118,12 @@ $edifrow = mysqli_fetch_array($edif);
           <td>
             <a class="boton2 col-xs-1" href="vista-sw.php?switch=<?php echo $row['id_switch']; ?>"><?php echo $row['id_switch']; ?></a>
           </td>
+          <td><?php echo $row['sysname']; ?></td>
           <td><?php echo $row['modelo']; ?></td>
           <td><?php echo $row['serie']; ?></td>
           <td><?php echo $row['ip_switch']; ?></td>
           <td><?php echo $row['id_edificio']; ?></td>
-          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 3) { ?>
+          <?php if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2) { ?>
           <td>
             <a class="boton default2 col-xs-1" style="margin-bottom: .2em" href="reg-editar-sw.php?switch=<?php echo $row['id_switch']; ?>">
               <i class="fas fa-edit"></i> Editar

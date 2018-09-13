@@ -5,7 +5,7 @@ if (isset($_SESSION['usuario'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html class="separaVertical">
   <head>
     <meta charset="utf-8">
     <title>Red UAEM</title>
@@ -23,8 +23,7 @@ if (isset($_SESSION['usuario'])) {
         </nav>
       </div>
     </header>
-
-    <main class="wrapper contenido"><br><br>
+    <main class="contenido"><br><br>
       <form class="formulario box" action="php/inicio-sesion.php" method="POST">
         <h3>Acceso al sistema</h3>
         <label class="col-xs-1" for="usuario">Usuario <br>
@@ -36,6 +35,6 @@ if (isset($_SESSION['usuario'])) {
         <button class="boton success" type="submit" name="button">Ingresar</button>
       </form><br><br><br>
     </main>
-    <footer></footer>
+    <footer class=""></footer>
   </body>
 </html>

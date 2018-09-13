@@ -50,6 +50,10 @@
       <label class="col-xs-1" for="[edificio]">
         <input class="" type="hidden" name="edificio" value='<?php echo intval(preg_replace('/[^0-9]+/', '', $edificio), 10); ?>' required>
       </label>
+      <label class="col-xs-1" for="lugar">
+        <p>Ubicación</p>
+        <textarea class="col-xs-1" name="lugar" rows="4" cols="20"></textarea>
+      </label><br><br>
       <div class="center">
         <button type="submit" name="submit" class="boton default2">
           <i class="fas fa-share-square"></i> Enviar
