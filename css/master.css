@@ -52,7 +52,7 @@ header {
 	z-index: 1000;
 	width: 100%;
 	padding: 5px 0;
-	height: 12%;
+	height: 2cm;
 	min-height: 4.7em;
 	max-height: 100px;
 	color: black;
@@ -106,6 +106,9 @@ a {
 a:hover {
 	text-decoration: underline;
 	text-decoration: none;
+}
+img {
+	display: flex;
 }
 table {	/* Tablas */
 	border-collapse: collapse;
@@ -199,7 +202,7 @@ footer .boton:hover {
 }
 .success {
 	color: #003515;
-	border: solid 1px #4C6800;
+	border: solid 1px #6e9300;
 	background: #afef00;
 		background: -moz-linear-gradient(top, #afef00 0%, #8fc400 100%);
 		background: -webkit-linear-gradient(top, #afef00 0%,#8fc400 100%);
@@ -309,7 +312,7 @@ footer .boton:hover {
 	color: #000;
 	display: block;
 	border-radius:4px;
-	border: solid 1px #686868;
+	border: solid 1px #878585;
 	margin: 4px;
 	cursor: pointer;
 	background: #c6c6c6;
@@ -364,7 +367,7 @@ footer .boton:hover {
 /* cuerpo */
 
 .wrapper {
-	margin:auto;
+	margin: auto;
 	display: block;
 	min-width: 200px;
 	max-width: 1000px;
@@ -378,26 +381,28 @@ footer .boton:hover {
 }
 .contenido {
 	position: relative;
-	padding-top: 2.7cm;
-	height: 90%;
+	padding-top: 2.6cm;
+	height: 80%;
 }
 .maimg {
-	width: 80%;
-	max-width: 40em;
-	height: 100%;
-	max-height: 28em;
-	margin: auto;
-	border-radius: 3px;
-	border: solid 1px #525451;
-	display: flex;
 	margin-bottom: 20px;
-	box-shadow: 0px 2px 3px #000;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-height: 500px;
+}
+.maimg img {
+	margin: auto;
+	width: 80%;
+	max-height: 370px;
+	display: block;
+	box-shadow: 0px 2px 1px #595959;
 }
 
 /* Index php */
 
 .main .galeria {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	list-style: none;
 	padding: 20px;
@@ -504,9 +509,8 @@ footer .boton:hover {
 		/*float:left;*/
 		margin-bottom: 10px;
 	}
-	.main img {
-		width: 430px;
-		display: flex;
+	.maimg img {
+		width: 60%;
 	}
 	.main table {
 		padding: 5px;
@@ -555,14 +559,14 @@ footer .boton:hover {
 
 @media(min-width:760px) {
 
+	.main .galeria {
+		width: 90%;
+	}
 	table {
 		overflow: visible;
 	}
 	.btn-cnav {
 		visibility: collapse;
-	}
-	.main img {
-		width: 420px;
 	}
 	.cartel {
 		font-size: 18px;
@@ -601,9 +605,6 @@ footer .boton:hover {
 
 @media(min-width:950px) {
 
-	.main img {
-		width: 530px;
-	}
 	.col-lg-1 {
 		width: 100%;
 		display: inline-block;

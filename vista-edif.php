@@ -17,9 +17,12 @@ $edif = mysqli_query(Conexion::getConexion(), $query);
 Conexion::cerrarConexion();
 $edifrow = mysqli_fetch_array($edif);
 ?>
-<main class="wrapper contenido">
-  <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2>
-  <img src="imagenes/edificios/<?php echo $edifrow['img_edif']; ?>" alt="<?php echo $edifrow['nombre']; ?>" class="maimg">
+<section class="contenido maimg">
+  <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2><br>
+  <img src="imagenes/edificios/<?php echo $edifrow['img_edif']; ?>"
+  alt="<?php echo $edifrow['nombre']; ?>" class="maimg">
+</section><br>
+<main class="wrapper">
   <div class="center">
     <a class="boton success" href="vista-plano.php?edif=<?php echo $edificio; ?>">
       <i class="far fa-map"></i> Ubicación

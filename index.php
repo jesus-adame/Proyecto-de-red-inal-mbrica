@@ -3,8 +3,10 @@
   include 'sql/repositorio_edificios.php';
   include 'php/conexion.class.php';
 ?>
-<main class="wrapper contenido">
-  <img src="imagenes/uaem.jpg" class="maimg">
+<section class="maimg contenido">
+  <img src="imagenes/uaem.jpg">
+</section><hr><br>
+<main class="wrapper">
   <h2>Despliegue de red inalámbrica del Campus Chamilpa</h2>
   <ul class="galeria">
   <?php
