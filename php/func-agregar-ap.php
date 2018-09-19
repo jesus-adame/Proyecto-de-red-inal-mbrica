@@ -1,25 +1,22 @@
 <?php
   include 'conexion.class.php';
   include 'protect.php';
+  include_once 'rep_ap.php';
   /* Resibir datos y almacenarlos */
-  $edificio = $_POST["edificio"];
-  $inventario = strtoupper($_POST["inventario"]);
-  $mac1 = $_POST["mac1"];
-  $mac2 = $_POST["mac2"];
-  $ip = $_POST["ip"];
-  $serie = $_POST["serie"];
-  $canal1 = $_POST["canal1"];
-  $canal2 = $_POST["canal2"];
-  $planta = $_POST["planta"];
-  $lugar = $_POST["lugar"];
+  $ap = new Ap(
+    $edificio = $_POST["edificio"],
+    $inventario = strtoupper($_POST["inventario"]),
+    $mac1 = $_POST["mac1"],
+    $mac2 = $_POST["mac2"],
+    $ip = $_POST["ip"],
+    $serie = $_POST["serie"],
+    $canal1 = $_POST["canal1"],
+    $canal2 = $_POST["canal2"],
+    $planta = $_POST["planta"],
+    $lugar = $_POST["lugar"]
+  );
 
-  Conexion::abrirConexion();   // Se abre conexion y se declara la consulta
-  $insertar = "INSERT INTO accesspoints (
-    EdificioNum, inventario, Mac1,	Mac2,	IP, Serie, Canal1, Canal2, Planta, lugar, fecha
-  ) VALUES (
-    '$edificio', '$inventario', '$mac1', '$mac2', '$ip', '$serie', '$canal1',
-    '$canal2', '$planta', '$lugar', NOW()
-  );";
+  Conexion::abrirConexion();   // Se abre conexion
   /* verificar */
   $verificar_inventario = mysqli_query(Conexion::getConexion(), "SELECT * FROM accesspoints WHERE Inventario = '$inventario'");
 
@@ -51,7 +48,7 @@
    exit;
   }
   /* ejecutar consulta */
-  $resultado = mysqli_query(Conexion::getConexion(), $insertar);
+  $resultado = $ap-> agregar(Conexion::getConexion());
 
   if (!$resultado) {
    echo '<script>

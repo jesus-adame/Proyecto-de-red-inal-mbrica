@@ -1,32 +1,38 @@
 <?php
   include 'conexion.class.php';
   include 'protect.php';
+  include 'rep_ap.php';
+
+  $ap = new Ap();
+
   $id_ap = $_GET['id'];
   $inv = $_GET['i'];
-  $destino = $_SERVER['DOCUMENT_ROOT'].'/wifi/imagenes/edificios/';
   Conexion::abrirConexion();
 
-  $old_data = mysqli_query(Conexion::getConexion(), "SELECT imagen FROM propiedades WHERE id_inventario = $inv");
-  $old_file = mysqli_fetch_array($old_data);
-  if ($old_file['imagen'] =! ('' || 1)) {
-    unlink($destino.$old_file['imagen']);
-  }
+  $eliminarImagen = $ap-> eliminarImagen(Conexion::getConexion(), $inv);
+  if ($eliminarImagen) {
+    $resultado = $ap-> eliminar(Conexion::getConexion(), $id_ap);
 
-  $eliminar = "DELETE FROM accesspoints WHERE id_ap = '$id_ap'";
-  $resultado = mysqli_query(Conexion::getConexion(), $eliminar);
-
-  if ($resultado) {
-    echo "<script>
-    window.history.go(-1);
-    alert('Se eliminó correctamente');
-    </script>";
-    exit;
+    if ($resultado) {
+      echo "<script>
+      alert('Se eliminó correctamente');
+      window.history.go(-1);
+      </script>";
+      exit;
+    } else {
+      echo "<script>
+      alert('No se ha podido eliminar');
+      window.history.go(-1);
+      </script>";
+      exit;
+    }
   } else {
     echo "<script>
-    alert('No se ha podido eliminar');
+    alert('No se eliminó la imagen del AP del servidor');
     window.history.go(-1);
     </script>";
     exit;
   }
+
 
 ?>

@@ -29,14 +29,24 @@ $prop_sw = new PropSwitchs(
   $_POST['xgm3'],
   $_POST['xgm3sb'],
   $_POST['sfp'],
-  $_POST['vim']
+  $_POST['vim'],
+  $_POST['notas'],
+  $_POST['parte']
 );
 /* Se insertan los datos */
 $insertar = $prop_sw-> editar(Conexion::getConexion(), $id_switch);
 
 if ($insertar) {
   /* Se agrega el nuevo archivo */
-  move_uploaded_file($_FILES['imagen']['tmp_name'], $destino.$imagen_name);
+  if ($_FILES['imagen']['name'] != '') {
+    $nueva = move_uploaded_file($_FILES['imagen']['tmp_name'], $destino.$imagen_name);
+    if ($nueva == false) {
+      echo '<script>
+      alert("No se pudo agregar la imagen");
+      window.history.go(-1);
+      </script>';
+    }
+  }
 
   echo '<script>
   window.history.go(-2);

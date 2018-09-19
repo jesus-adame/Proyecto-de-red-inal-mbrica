@@ -101,11 +101,15 @@
       <p style="overflow:hidden"><?php echo $row['informacion']; ?></p><br><br>
       <?php
       if ($_SESSION['tipo'] == 1) {
-        if ($row['id_inventario'] > 0) { ?>
-          <a href="regis-prop-editar-ap.php?inventario=<?php echo $inventario; ?>&edif=<?php echo $edificio; ?>" class="boton2"><i class="fas fa-edit"></i> Actualizar</a>
+        if ($row['powera'] != '') { ?>
+          <a href="regis-prop-editar-ap.php?inventario=<?php echo $inventario; ?>&edif=<?php echo $edificio; ?>" class="boton2">
+            <i class="fas fa-edit"></i> Actualizar
+          </a><br>
           <?php
         } else { ?>
-          <a href="regis-prop-ap.php?inventario=<?php echo $inventario; ?>&edif=<?php echo $edificio; ?>" class="boton2"><i class="fas fa-arrow-up"></i> Registrar datos</a>
+          <a href="regis-prop-ap.php?inventario=<?php echo $inventario; ?>&edif=<?php echo $edificio; ?>" class="boton2">
+            <i class="fas fa-arrow-up"></i> Registrar datos
+          </a><br>
       <?php } } ?>
     </div>
   </div>
