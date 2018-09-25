@@ -31,17 +31,18 @@ $row = mysqli_fetch_array($execute);
       <?php } ?>
     </div><?php
     } else { ?>
-    <div class="wrapper">
-      <p style="font-size:95%;margin-left: 5em"><?php echo nl2br($row['descripcion']); ?></p>
+    <div class="wrapper" style="padding: 0 4em">
+      <p style="font-size:95%;"><?php echo nl2br($row['descripcion']); ?></p>
+      <br>
+      <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa']; ?>" alt=""><br>
+      <?php if (!empty($row['mapa2'])) { ?>
+      <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa2']; ?>" alt=""><br>
+      <?php } ?>
+      <?php if (!empty($row['mapa3'])) { ?>
+      <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa3']; ?>" alt=""><br>
+      <?php } ?>
+      <?php if ($_SESSION['tipo'] == 1) { ?>
     </div><br>
-    <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa']; ?>" alt=""><br>
-    <?php if (!empty($row['mapa2'])) { ?>
-    <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa2']; ?>" alt=""><br>
-    <?php } ?>
-    <?php if (!empty($row['mapa3'])) { ?>
-    <img class="wrapper borde" src="imagenes/planos/<?php echo $row['mapa3']; ?>" alt=""><br>
-    <?php } ?>
-    <?php if ($_SESSION['tipo'] == 1) { ?><br>
     <div class="center">
       <a class="boton default2" href="reg-editar-mapa.php?id_edificio=<?php echo $id_edificio; ?>">
         <i class="fas fa-edit"></i> Editar

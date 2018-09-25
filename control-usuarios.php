@@ -37,19 +37,19 @@ $miUsuario = mysqli_fetch_array($datos);
       <fieldset style="padding:10px; border-radius:4px;">
         <form class="" action="php/cambiar-pass.php?us=<?php echo $miUsuario['usuario']; ?>" method="post">
           <label class="col-xs-1" for="pass">Contraseña :<br>
-            <input class="col-xs-1" type="password" name="pass" value="">
+            <input id="pass" class="col-xs-1" type="password" name="pass" required>
           </label><br><br>
-          <label class="col-xs-2" for="pass">Nueva contraseña :<br>
-            <input class="col-xs-1" type="password" name="pass1" value="">
+          <label class="col-xs-2" for="pass1">Nueva contraseña :<br>
+            <input id="pass1" class="col-xs-1" type="password" name="pass1" required>
           </label>
-          <label class="col-xs-2" for="pass">Repetir nueva contraseña :<br>
-            <input class="col-xs-1" type="password" name="pass2" value="">
+          <label class="col-xs-2" for="pass2">Repetir nueva contraseña :<br>
+            <input id="pass2" class="col-xs-1" type="password" name="pass2" required>
           </label>
           <button class="success boton" type="submit" name="button">Actualizar</button>
         </form>
       </fieldset>
     </div>
-  </section><br><br><hr style="border: solid 1px #c1c1c1"><br>
+  </section><br><br><hr style="color: #c1c1c1"><br>
   <!--- SECCIÓN DOS --->
   <h3>Control de usuarios</h3>
   <table>

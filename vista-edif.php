@@ -18,7 +18,7 @@ Conexion::cerrarConexion();
 $edifrow = mysqli_fetch_array($edif);
 ?>
 <section class="contenido maimg">
-  <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2><br>
+  <h2><?php echo $edificio.'. '.$edifrow['nombre']; ?></h2>
   <img src="imagenes/edificios/<?php echo $edifrow['img_edif']; ?>"
   alt="<?php echo $edifrow['nombre']; ?>" class="maimg">
 </section><br>
@@ -63,7 +63,7 @@ $edifrow = mysqli_fetch_array($edif);
       ?>
         <tr>
           <td>
-            <a class="boton2 col-xs-1" href="vista-ap.php?edif=<?php echo $edificio; ?>&inventario=<?php echo $row['inventario']; ?>">
+            <a class="boton2 col-xs-1" style="margin: auto;" href="vista-ap.php?edif=<?php echo $edificio; ?>&inventario=<?php echo $row['inventario']; ?>">
               <?php echo $row['inventario']; ?>
             </a>
           </td>

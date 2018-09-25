@@ -25,12 +25,12 @@ if (isset($_SESSION['usuario'])) {
     </header>
     <main class="contenido"><br><br>
       <form class="formulario box" action="php/inicio-sesion.php" method="POST">
-        <h3>Acceso al sistema</h3>
+        <h3>Acceso al sistema</h3><hr style="color: #c1c1c1"><br>
         <label class="col-xs-1" for="usuario">Usuario <br>
-          <input class="col-80" type="text" name="usuario">
-        </label><br><br>
+          <input id="usuario" class="col-80" type="text" name="usuario">
+        </label><br>
         <label class="col-xs-1" for="pass">Contraseña <br>
-          <input class="col-80" type="password" name="pass" placeholder="*******">
+          <input id="pass" class="col-80" type="password" name="pass" placeholder="*******">
         </label><br><br>
         <button class="boton success" type="submit" name="button">Ingresar</button>
       </form><br><br><br>

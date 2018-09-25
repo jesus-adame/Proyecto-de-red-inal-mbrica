@@ -67,7 +67,7 @@ class PropSwitchs
       notas = '$notas', parte = '$parte'
       WHERE id_switch = $id";
     } else {
-      $query = "UPDATE prop_switchs SET imagen = '$imagen', sumistak = '$sumistack',
+      $query = "UPDATE prop_switchs SET imagen = '$imagen', sumistack = '$sumistack',
       xgm3 = '$xgm3sb', xgm3sb = '$xgm3', sfp = '$sfp', vim = '$vim',
       notas = '$notas', parte = '$parte'
       WHERE id_switch = $id";

@@ -38,6 +38,7 @@ h1 {
 	font-weight: 400;
 	line-height: 1em;
 	font-size: 1cm;
+	color: #1e2b42;
 }
 h2, h3, h4, h5 {		/* Titulos */
 	font-family: 'Prosto One', sans-serif;
@@ -176,7 +177,6 @@ footer .boton:hover {
 }
 .box {
 	box-shadow: 0px 2px 2px #000;
-	position: relative;
 }
 .just {
 	display: grid;
@@ -247,11 +247,10 @@ footer .boton:hover {
 /* Vista AP */
 
 .div-ap {
-	text-align: justify;
 	padding-top: 15px;
 	border-radius: 4px;
 	display: flex;
-	position: relative;
+	flex-direction: row;
 	overflow-x: hidden;
 	min-height: 590px;
 	max-height: 100%;
@@ -262,6 +261,9 @@ footer .boton:hover {
 		background: linear-gradient(to bottom, #f2f5f6 0%,#c8d7dc 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6',
 	endColorstr='#c8d7dc',GradientType=0 );
+}
+.div-head {
+	background: #d8d8d8;
 }
 .div-padding {
 	padding-left: 20px;
@@ -279,6 +281,7 @@ footer .boton:hover {
   border-radius: 50%;
   border: solid 1px #919191;
 	margin: auto;
+	cursor: help;
 }
 .Verde {
 	background: #5cb85c;
@@ -348,7 +351,7 @@ footer .boton:hover {
 	padding-top: 7px;
 	text-align: center;
 	font-size: 30px;
-	color: #2c2d2d;
+	color: #23334f;
 	display: inline-block;
 	width: 60px;
 	height: 100%;
@@ -358,10 +361,10 @@ footer .boton:hover {
 	margin-left: 1px;
 }
 .btn-nav:hover, .btn-cnav:hover {
-	border: solid 1px #c1c1c1;
-	color: #eeeeee;
+	border: solid 1px #a6b7dd;
+	color: #dbe6ff;
 	cursor: pointer;
-	background: #2c2d2d;
+	background: #404f72;
 }
 
 /* cuerpo */
@@ -449,9 +452,9 @@ footer .boton:hover {
 }
 .thumb {
 	display: block;
-	position: absolute;
+	margin: auto;
 	max-width: 100%;
-	max-height: 700px;
+	max-height: 540px;
 }
 .borde {
 	border: solid 1px #bcbcbc;
@@ -462,7 +465,6 @@ footer .boton:hover {
 	max-height: 700px;
 }
 .col-xs-1 {
-	margin: auto;
 	width: 98%;
 	display: inline-block;
 }

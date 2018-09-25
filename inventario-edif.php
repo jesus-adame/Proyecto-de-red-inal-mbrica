@@ -27,7 +27,9 @@ include 'php/conexion.class.php';
         while ($row = mysqli_fetch_array($resultado)) { ?>
         <tr>
           <td>
-            <a class="center boton2 col-xs-1" href="vista-edif.php?edif=<?php echo $row['id_edificio']; ?>"><?php echo $row['id_edificio']; ?></a>
+            <a class="boton2 col-xs-1" style="margin: auto;" href="vista-edif.php?edif=<?php echo $row['id_edificio']; ?>">
+              <?php echo $row['id_edificio']; ?>
+            </a>
           </td>
           <td><?php echo $row['nombre']; ?></td>
           <td style="position:relative">

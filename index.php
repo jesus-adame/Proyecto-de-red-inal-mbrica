@@ -5,7 +5,7 @@
 ?>
 <section class="maimg contenido">
   <img src="imagenes/uaem.jpg">
-</section><hr><br>
+</section><hr style="color:#c1c1c1"><br>
 <main class="wrapper">
   <h2>Despliegue de red inalámbrica del Campus Chamilpa</h2>
   <ul class="galeria">
