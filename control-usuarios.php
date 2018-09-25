@@ -13,7 +13,7 @@ $miUsuario = mysqli_fetch_array($datos);
 <main class="contenido wrapper">
   <h3>Mi usuario</h3>
   <section class="row">
-    <div class="col-xs-2" style="height: 290px; border: solid 1px #c1c1c1;
+    <div class="col-xs-2" style="border: solid 1px #c1c1c1;
     border-radius:4px; overflow: hidden; display: flex;">
       <img style="max-width: 300px; margin:auto;"
       src="imagenes/usuarios/<?php

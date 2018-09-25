@@ -116,7 +116,7 @@
         <p class="txt">Información</p>
         <p style="overflow:hidden"><?php echo $row['informacion']; ?></p><br><br>
         <?php
-        if ($_SESSION['tipo'] == 1) {
+        if ($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2) {
           if ($row['powera'] != '') { ?>
             <a href="regis-prop-editar-ap.php?inventario=<?php echo $inventario; ?>&edif=<?php echo $edificio; ?>" class="boton2">
               <i class="fas fa-edit"></i> Actualizar
