@@ -2,7 +2,7 @@
 include 'struct/header.php';
 include 'php/conexion.class.php';
 include 'php/rep_usuario.php';
-if (!isset($_SESSION['tipo']) || ($_SESSION['tipo'] != 1 && $_SESSION['tipo'] != 2)) {
+if (!isset($_SESSION['tipo'])) {
   header('location: inicio.php'); // Evita el acceso a usuarios no identificados
 }
 Conexion::abrirConexion();
@@ -51,6 +51,7 @@ $miUsuario = mysqli_fetch_array($datos);
     </div>
   </section><br><br><hr style="color: #c1c1c1"><br>
   <!--- SECCIÓN DOS --->
+  <?php if (($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2)) { ?>
   <h3>Control de usuarios</h3>
   <table>
     <thead>
@@ -113,6 +114,7 @@ $miUsuario = mysqli_fetch_array($datos);
       } ?>
     </tbody>
   </table>
+  <?php } ?>
 </main>
 <?php
 include 'struct/footer.php';

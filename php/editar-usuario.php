@@ -2,8 +2,8 @@
 include 'conexion.class.php';
 include 'rep_usuario.php';
 
-$pass = $_POST['pass'];
-$pass2 = $_POST['pass2'];
+$pass = sha1($_POST['pass']);
+$pass2 = sha1($_POST['pass2']);
 $id = $_POST['id'];
 $ruta = $_SERVER['DOCUMENT_ROOT'].'/wifi/imagenes/usuarios/';
 

@@ -2,8 +2,8 @@
 include 'conexion.class.php';
 include 'rep_usuario.php';
 
-$pass = $_POST['pass'];
-$pass2 = $_POST['pass2'];
+$pass = sha1($_POST['pass']);
+$pass2 = sha1($_POST['pass2']);
 //$imagen = $_FILES['imagen']['name'];
 
 if ($pass == $pass2 && (!empty($pass) && !empty($pass2))) {

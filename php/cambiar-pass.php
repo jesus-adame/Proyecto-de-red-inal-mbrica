@@ -4,9 +4,9 @@ include 'conexion.class.php';
 Conexion::abrirConexion();
 
 $usu = $_GET['us'];
-$pass = $_POST['pass'];
-$pass1 = $_POST['pass1'];
-$pass2 = $_POST['pass2'];
+$pass = sha1($_POST['pass']);
+$pass1 = sha1($_POST['pass1']);
+$pass2 = sha1($_POST['pass2']);
 
 $usuario = new Usuario($usu);
 $validarUsuario = $usuario-> validarUsuarioClave(Conexion::getConexion(), $pass);

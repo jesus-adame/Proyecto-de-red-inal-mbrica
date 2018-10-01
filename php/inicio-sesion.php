@@ -5,7 +5,7 @@ session_start();
 Conexion::abrirConexion();
 
 $usu = $_POST['usuario'];
-$pass = $_POST['pass'];
+$pass = sha1($_POST['pass']);
 
 $usuario = new Usuario($usu);
 $execute = $usuario->iniciarSesion(Conexion::getConexion(), $pass);
