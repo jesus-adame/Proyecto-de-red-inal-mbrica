@@ -18,7 +18,7 @@
         </label>
         <label class="col-xs-2" for="[ip]">
           <p>IP</p>
-          <input class="col-xs-1" type="text" placeholder="IP" name="ip" value="<?php echo $row['IP']; ?>" required>
+          <input class="col-xs-1" type="text" name="ip" value="<?php echo $row['IP']; ?>" required>
         </label><br>
         <label class="col-xs-1" for="[mac1]">
           <p>Mac Address 1</p>
@@ -28,13 +28,17 @@
           <p>Mac Address 2</p>
           <textarea class="col-xs-1" rows="3" type="text" name="mac2" required><?php echo $row['Mac2']; ?></textarea>
         </label><br><br>
+        <label class="col-xs-1" for="[serie]">
+          <p>Serie</p>
+          <input class="col-xs-1" type="text" name="serie" value="<?php echo $row['Serie']; ?>" required>
+        </label><br><br>
         <label class="col-xs-2" for="[canalr1]">
           <p>Canal 1</p>
-          <input class="col-xs-1" type="text" placeholder="Canal radio 1" name="canalr1" value="<?php echo $row['Canal1']; ?>" required>
+          <input class="col-xs-1" type="text" name="canalr1" value="<?php echo $row['Canal1']; ?>" required>
         </label>
         <label class="col-xs-2" for="[canalr2]">
           <p>Canal 2</p>
-          <input class="col-xs-1" type="text" placeholder="Canal radio 2" name="canalr2" value="<?php echo $row['Canal2']; ?>" required>
+          <input class="col-xs-1" type="text" name="canalr2" value="<?php echo $row['Canal2']; ?>" required>
         </label><br>
         <label class="col-xs-2" for="[planta]">
           <p>Planta</p>

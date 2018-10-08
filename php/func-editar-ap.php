@@ -11,7 +11,7 @@
     $mac1 = $_POST["mac1"],
     $mac2 = $_POST["mac2"],
     $ip = $_POST["ip"],
-    0,
+    $serie = $_POST['serie'],
     $canalr1 = $_POST["canalr1"],
     $canalr2 = $_POST["canalr2"],
     $planta = $_POST["planta"],
@@ -31,7 +31,7 @@
 
   } else {
     echo '<script>
-    alert("Error al editar el AP");
+    alert("Ya hay un AP con ese número de inventario");
     window.history.go(-1);
     </script>';
   }

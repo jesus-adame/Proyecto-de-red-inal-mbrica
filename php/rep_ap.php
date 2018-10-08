@@ -61,9 +61,10 @@ class Ap
 
   public function editar($con, $id) {
     $inv = $this -> inventario;
-    $ip = $this -> ip;
     $mac1 = $this-> mac1;
     $mac2 = $this-> mac2;
+    $ip = $this -> ip;
+    $serie = $this-> serie;
     $c1 = $this -> canal1;
     $c2 = $this -> canal2;
     $plnt = $this -> planta;
@@ -71,7 +72,7 @@ class Ap
     $lugar = $this-> lugar;
 
     $query = "UPDATE accesspoints
-    SET inventario = '$inv', IP = '$ip', Mac1 = '$mac1', Mac2 = '$mac2',
+    SET inventario = '$inv', IP = '$ip', Serie = '$serie', Mac1 = '$mac1', Mac2 = '$mac2',
     Canal1 = '$c1', Canal2 = '$c2', Planta = '$plnt',
     EdificioNum = '$edif', lugar = '$lugar'
     WHERE id_ap = '$id'";

@@ -41,7 +41,7 @@
         <br>
         <div class="col-lg-1 center box" style="border-radius: 0px 0px 6px 6px">
           <p class="txt">- Estado -</p>
-          <div class="col-xs-5 col-sm-3 col-md-5">
+          <div class="col-xs-4 col-sm-5 col-md-5">
             <p>On/Off</p>
             <div title="Estado del AP:
   > Verde - El AP está funcionando correctamente.
@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <div class="content col-xs-5 col-sm-3 col-md-5">
+          <div class="col-xs-4 col-sm-5 col-md-5">
             <p>Lan1</p>
             <div title="LED de LAN 1:
   > Verde - El AP está funcionando correctamente.
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-sm-3 col-md-5">
+          <div class="col-xs-4 col-sm-5 col-md-5">
             <p>Lan2</p>
             <div title="LED de LAN 2:
   > Verde - El AP está funcionando correctamente.
@@ -71,7 +71,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-sm-3 col-md-5">
+          <div class="col-xs-4 col-sm-5 col-md-5">
             <p>5Ghz</p>
             <div title="Radio 1:
   > Verde - El AP está funcionando correctamente.
@@ -81,7 +81,7 @@
             </div>
           </div>
 
-          <div class="col-xs-5 col-sm-3 col-md-5">
+          <div class="col-xs-4 col-sm-5 col-md-5">
             <p>2.4Ghz</p>
             <div title="Radio 2:
   > Verde - El AP está funcionando correctamente.

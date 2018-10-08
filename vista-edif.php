@@ -119,7 +119,7 @@ $edifrow = mysqli_fetch_array($edif);
         ?>
         <tr>
           <td>
-            <a class="boton2 col-xs-1" href="vista-sw.php?switch=<?php echo $row['id_switch']; ?>"><?php echo $row['id_switch']; ?></a>
+            <a class="boton2 col-xs-1" style="margin: auto;" href="vista-sw.php?switch=<?php echo $row['id_switch']; ?>"><?php echo $row['id_switch']; ?></a>
           </td>
           <td><?php echo $row['sysname']; ?></td>
           <td><?php echo $row['modelo']; ?></td>
